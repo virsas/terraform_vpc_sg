@@ -43,7 +43,7 @@ variable "vpc_sg_admin" {
 # VPC security groups
 ######################
 module "vpc_sg_admin" {
-  source = "github.com/virsas/tfmod_vpc_rt"
+  source = "github.com/virsas/tfmod_vpc_sg"
   vpc_id = module.vpc_main.id
   sg     = var.vpc_sg_admin
 }
