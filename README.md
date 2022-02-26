@@ -31,11 +31,13 @@ VPC <https://github.com/virsas/tfmod_vpc>
 ######################
 # VPC SG variables
 ######################
-variable "vpc_sg_admin" {
+variable "vpc_sg_example" {
   default = {
     name = "vpc_sg_example",
     rules = [
-      { from = "0", to = "0", protocol  = "-1", blocks = [ "1.1.1.1/32" ] }
+      { from = "3306", to = "3306", protocol  = "TCP", blocks = [ "10.0.0.0/24", "10.0.1.0/24" ] },
+      { from = "5432", to = "5432", protocol  = "TCP", blocks = [ "10.0.0.0/24" ] },
+      { from = "22", to = "22", protocol  = "TCP", blocks = [ "1.1.1.1/32" ] }
     ]
   }
 }
@@ -45,6 +47,6 @@ variable "vpc_sg_admin" {
 module "vpc_sg_admin" {
   source = "github.com/virsas/tfmod_vpc_sg"
   vpc_id = module.vpc_main.id
-  sg     = var.vpc_sg_admin
+  sg     = var.vpc_sg_example
 }
 ```
