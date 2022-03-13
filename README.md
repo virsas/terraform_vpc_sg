@@ -1,4 +1,4 @@
-# tfmod_vpc_sg
+# terraform_vpc_sg
 
 Terraform module to create VPC security groups in AWS
 
@@ -23,7 +23,7 @@ variable "vpc_sg_example" {
 
 ## Dependency
 
-VPC <https://github.com/virsas/tfmod_vpc>
+VPC <https://github.com/virsas/terraform_vpc>
 
 ## Terraform example
 
@@ -45,7 +45,7 @@ variable "vpc_sg_example" {
 # VPC security groups
 ######################
 module "vpc_sg_admin" {
-  source = "github.com/virsas/tfmod_vpc_sg"
+  source = "github.com/virsas/terraform_vpc_sg"
   vpc_id = module.vpc_main.id
   sg     = var.vpc_sg_example
 }
