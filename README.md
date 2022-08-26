@@ -45,7 +45,7 @@ variable "vpc_sg_example" {
 # VPC security groups
 ######################
 module "vpc_sg_admin" {
-  source = "github.com/virsas/terraform_vpc_sg"
+  source = "git::https://github.com/virsas/terraform_vpc_sg.git?ref=v1.0.0"
   vpc_id = module.vpc_main.id
   sg     = var.vpc_sg_example
 }
